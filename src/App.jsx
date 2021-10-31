@@ -14,14 +14,14 @@ function App() {
 
 
       <Router>
-      
-      <h1 className="text-center p-4">¿Quién quiere ser millonario?</h1>
+
+        <h1 className="text-center p-4">¿Quién quiere ser millonario?</h1>
         <Switch>
           <Route path="/play/:jNombre">
             <Home />
             <NavBar />
           </Route>
-          <Route path="/" component={Login}  />
+          <Route path="/" component={Login} />
           <Route path="*" component={Login} />
         </Switch>
 

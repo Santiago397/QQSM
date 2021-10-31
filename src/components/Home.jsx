@@ -10,13 +10,11 @@ export const Home = () => {
     const { jNombre } = useParams();
     const history = useHistory();
 
-
     const [preguntas] = useState([objPreguntas]);
     const [respuesta, setRespuesta] = useState('');
     const [resCorrecta, setResCorrecta] = useState()
     const [contador, setContador] = useState(0);
     const [puntosActuales, setPuntosActuales] = useState(0);
-
 
     localStorage.setItem('user', JSON.stringify({ name: jNombre, points: puntosActuales }))
 
@@ -24,12 +22,13 @@ export const Home = () => {
         handleOption()
     }, [respuesta])
 
+    console.log();
 
     const handleCorrecto = () => {
         setRespuesta('')
         setResCorrecta(true);
         setPuntosActuales(puntosActuales + 100);
-        setContador(contador + 1);
+        setContador(Math.floor(Math.random() * (20 - 1) + 1));
     }
 
     const respuestaErrada = () => {
@@ -122,10 +121,6 @@ export const Home = () => {
                 respuestaErrada();
             }
         }
-    }
-
-    const finRonda = () => {
-            
     }
 
     return (

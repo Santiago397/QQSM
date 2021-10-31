@@ -8,7 +8,7 @@ export const Ganador = (props) => {
     let userInfo = JSON.parse(localStorage.getItem('user'))
     const history = useHistory()
 
-    const [gano, setGano] = useState(props.ganador);
+    const [gano] = useState(props.ganador);
     const [puntos, setPuntos] = useState()
 
     useEffect(() => {
@@ -22,10 +22,9 @@ export const Ganador = (props) => {
                     <ModalTitle>¡¡¡¡GANASTE!!!!!</ModalTitle>
                 </ModalHeader>
                 <ModalBody>
-                    <p className="text-center">Has conseguido ${ puntos } dolares! </p>
+                    <p className="text-center">Has conseguido ${puntos} dolares! </p>
                 </ModalBody>
                 <ModalFooter>
-
                     <button className="btn btn-danger" onClick={() => history.push("/")}>Salir</button>
                 </ModalFooter>
             </Modal>
